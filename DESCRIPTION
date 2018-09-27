@@ -1,13 +1,13 @@
 Package: calcDNSAF
-Title: What the Package Does (One Line, Title Case)
+Title: dNSAF calculator
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Edward",
+           family = "Lau",
            role = c("aut", "cre"),
            email = "first.last@example.com")
-Description: What the package does (one paragraph).
-License: What license it uses
+Description: This package calculates distributed normalized spectral abundance factors (dNSAF) from percolator output files.
+License: CC0
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.0

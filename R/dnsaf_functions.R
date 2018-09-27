@@ -8,7 +8,7 @@
 #' @keywords dNSAF proteomics
 #' @export
 #' @examples
-#' dnsaf(percolatorFile=percolator_target_psms)
+#' calcDNSAF::dnsaf(percolatorFile = percolatorFile, fasta = Mm_UniProt, test_run=T, q_cutoff=0.01)
 #'
 #'
 

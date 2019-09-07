@@ -14,6 +14,8 @@ dnsaf(percolatorFile, fasta, test_run = F, q_cutoff = 0.01)
 \item{test_run}{Whether to do a short run of only 100 search results? Defaults to FALSE}
 
 \item{q_cutoff}{Percolator q vsalue cutoff to consider as confident peptide. Defaults to 0.01}
+
+\item{nonUniqueDummyCount}{ Dummy counts to give to a protein without unique peptide. Defaults to 0.5}
 }
 \description{
 This function calculates distributed normalized spectral abundance factor from a percolator target psms file

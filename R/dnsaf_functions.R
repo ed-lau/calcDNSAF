@@ -5,6 +5,7 @@
 #' @param fasta a Biostrings AA string set containing a proteomics database used in the search
 #' @param test_run Whether to do a short run of only 100 search results? Defaults to FALSE
 #' @param q_cutoff Percolator q vsalue cutoff to consider as confident peptide. Defaults to 0.01
+#' @param nonUniqueDummyCount Dummy counts to give to a protein without unique peptide. Defaults to 0.5
 #' @keywords dNSAF proteomics
 #' @export
 #' @examples
@@ -17,7 +18,8 @@
 dnsaf <- function(percolatorFile,
                   fasta,
                   test_run=F,
-                  q_cutoff=0.01){
+                  q_cutoff=0.01,
+                  nonUniqueDummyCount=0.5){
 
   require(Biostrings)
   require(tidyverse)
@@ -68,7 +70,7 @@ dnsaf <- function(percolatorFile,
   uniqueCounts <- uniqueCounts[colnames(peptideIDmatrix), ] %>% data.matrix()
 
   # Giving the poor proteins with no unique count a 0.5 count
-  uniqueCounts[uniqueCounts==0] <- 0.5
+  uniqueCounts[uniqueCounts==0] <- nonUniqueDummyCount
 
   # Multiply the two matrices together to get a matrix of peptides by the unique specturm counts of each protein to which they belong
   uniqueCountMatrix <- (t(peptideIDmatrix) * uniqueCounts[,1]) %>% t()

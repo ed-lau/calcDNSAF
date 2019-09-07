@@ -4,7 +4,8 @@
 \alias{dnsaf}
 \title{Calculate dNSAF}
 \usage{
-dnsaf(percolatorFile, fasta, test_run = F, q_cutoff = 0.01)
+dnsaf(percolatorFile, fasta, test_run = F, q_cutoff = 0.01,
+  nonUniqueDummyCount = 0.5)
 }
 \arguments{
 \item{percolatorFile}{a tibble read from the percolator target psms file}
@@ -15,13 +16,13 @@ dnsaf(percolatorFile, fasta, test_run = F, q_cutoff = 0.01)
 
 \item{q_cutoff}{Percolator q vsalue cutoff to consider as confident peptide. Defaults to 0.01}
 
-\item{nonUniqueDummyCount}{ Dummy counts to give to a protein without unique peptide. Defaults to 0.5}
+\item{nonUniqueDummyCount}{Unique counts to give to a protein without unique peptide. Defaults to 0.5}
 }
 \description{
 This function calculates distributed normalized spectral abundance factor from a percolator target psms file
 }
 \examples{
-dnsaf(percolatorFile=percolator_target_psms)
+calcDNSAF::dnsaf(percolatorFile = percolatorFile, fasta = Mm_UniProt, test_run=T, q_cutoff=0.01)
 
 
 }

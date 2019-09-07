@@ -5,14 +5,13 @@
 #' @param fasta a Biostrings AA string set containing a proteomics database used in the search
 #' @param test_run Whether to do a short run of only 100 search results? Defaults to FALSE
 #' @param q_cutoff Percolator q vsalue cutoff to consider as confident peptide. Defaults to 0.01
-#' @param nonUniqueDummyCount Dummy counts to give to a protein without unique peptide. Defaults to 0.5
+#' @param nonUniqueDummyCount Unique counts to give to a protein without unique peptide. Defaults to 0.5
 #' @keywords dNSAF proteomics
 #' @export
 #' @examples
 #' calcDNSAF::dnsaf(percolatorFile = percolatorFile, fasta = Mm_UniProt, test_run=T, q_cutoff=0.01)
 #'
 #'
-
 
 
 dnsaf <- function(percolatorFile,
